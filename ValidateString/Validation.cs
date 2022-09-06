@@ -18,7 +18,7 @@ namespace ValidateString
             char[] cArray = sentence.ToCharArray();
 
 
-            validate = isFirstCapital(cArray) & EvenQuoteMarks(cArray) & EndsWithTermination(cArray) & NoExtraPeriodChars(cArray) & CheckNumsSpeltOut(sentence);
+            validate = IsFirstCapital(cArray) & EvenQuoteMarks(cArray) & EndsWithTermination(cArray) & NoExtraPeriodChars(cArray) & CheckNumsSpeltOut(sentence);
 
             return validate;
 
@@ -27,6 +27,7 @@ namespace ValidateString
         bool CheckNumsSpeltOut(string sentence)
         {
             sentence = sentence.Replace(",", "");
+            sentence = sentence.Replace(".", "");
 
             string[] wArray = sentence.Split(" ");
 
@@ -92,7 +93,7 @@ namespace ValidateString
 
         }
 
-        bool isFirstCapital(char[] cArray)
+        bool IsFirstCapital(char[] cArray)
         {
             if (cArray[0].ToString().ToUpper() == cArray[0].ToString())
             {

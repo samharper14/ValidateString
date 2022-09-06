@@ -6,16 +6,25 @@ using ValidateString;
 
 Validation validation = new Validation();
 
+while (true)
+{
+    Console.WriteLine("Please enter a sentence");
 
-Console.WriteLine("Please enter a sentence");
-string sentence = Console.ReadLine();
+    string sentence = Console.ReadLine();
+ 
+    bool ValidSentence = validation.ValidateSentence(sentence);
 
-bool ValidSentence = validation.ValidateSentence(sentence);
+    if (ValidSentence)
+    {
+        Console.WriteLine("Your sentence is valid");
+       
+    }
+    else
+    {
+        Console.WriteLine("Your sentence is invalid");
+    }
+    Console.WriteLine("");
 
-if (ValidSentence){ 
-    Console.WriteLine("Your sentence is valid");
-}else
-{   Console.WriteLine("Your sentence is invalid");
 }
 
 
